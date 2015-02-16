@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+
+\usepackage{amsthm, amssymb, amsmath}
+
+\newtheorem{theorem}{Teorema}[section]%chapter
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definició}
+\newtheorem{example}[theorem]{Exemple}
+\newtheorem{writing}[theorem]{Escriptura}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\U}{\mathcal{U}}
+
+\usepackage{enumitem}
+
+\begin{document}
+\tableofcontents
+
+% Ara per ara, no tinc cap perfil per pujar la informacio que obtinc, aixi que ho pujare tot a sac. Esperem
+% rapidament millorar aquests defecte que aparentment detectem
+\section{Presentació}
+\subsection{Respecte $\mathbb{R}$}
+\begin{definition}[$a$ adherent]
+$\exists (X_n)$ succesió de punts tal que $X_n \to a$
+\end{definition}
+\begin{example}
+$(a, b)$, $a$ és adherent per la successió $X_n = a + \frac{1}{n} \quad \forall n$
+\end{example}
+\begin{definition}[Clausura i interior]
+\begin{itemize}
+\item $[a, b]$ interval tancat
+\item $(a, b)$ interval obert
+	\begin{itemize}
+	\item[Definició:] $(a, b)$ és l'interior de $[a, b]$
+	\item[Definició:] $[a, b]$ és la clausura de $(a, b)$
+	\end{itemize}
+\end{itemize}
+\end{definition}
+
+\subsection{Respecte $\R^n$}
+\begin{definition}[Bola]
+\begin{itemize}
+\item[Bola oberta:] $B_r (x) = \{y \in \R^n : ||y -x|| < r\}$
+\item[Bola tancada:] $B_r (x) = \{y \in \R^n : ||y -x|| \leq r\}$
+\end{itemize}
+\end{definition}
+
+\begin{writing}[$\U, A$]
+\begin{itemize}
+\item $A$, tancat
+\item $\U$, obert
+\end{itemize}
+Aquesta és la tendència
+\end{writing}
+
+\begin{definition}[obert i tancat]
+\begin{itemize}
+\item[obert] $\forall x \in \U, \quad \exists r > 0$ tal que $B_r(x) \subset \U$
+\item[tancat] $\forall$ successió $(X_n)$ amb $X_n \in A$ que convergeix a un punt $a$ es compleix $a \in A$
+\end{itemize}
+\end{definition}
+
+\section{Espais mètrics}
+Generalitzem, admet distància
+\begin{definition}[Distància]
+en un conjunt $X$ és una aplicació
+$$d:X*X\to\R$$
+\begin{enumerate}[label=\bfseries D\arabic*)]
+\item $d(x, y) \geq 0$
+\item $d(x, y) = 0 \Leftrightarrow x = y$
+\item $d(x, y) = d(y, x)$
+\item $d(x, z) \leq d(x, y) + d(y, z)$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Espai mètric]
+$(X, d)$ Conjunt $X$ amb l'aplicació distància $d$. On la distància respecta les 4 propietats.
+\end{definition}
+
+\begin{example}
+\begin{itemize}
+\item $(X_i, d_i)$ espais mètrics, $d(x, y) = \max{d_j(x_i, y_i)}$ distància producte
+\item $g, f: [0, 1] \to \R$ contínua'inues. $d(f, g) = sup\{|g(x) - f(x)|\}$ distància suprem
+\item $X = \Z, p \in$ primer $d(m, n) = \left\{\begin{array}{ll}0 &\text{si } m=n\\p^{-v_p(m-n)} &\text{si } m\neq n\end{array}\right.$ distància $p$-àdica
+	\subitem Valoració peàdica $v_p(a) = \max\{k\in \Z| k \geq 0, p^k$ divideix $a \} \forall a \in Z$
+\item $d(x,y) = \left\{\begin{array}{ll}0&\text{si }x=y\\1&\text{si }x\neq y\end{array}\right.$
+\end{itemize}
+\end{example}
+
+\begin{proof}
+muhaha ex xD
+\end{proof}
+
+\end{document}
+
+Per primer cop ho faig amb un pelet de sentit
+http://tex.stackexchange.com/questions/45817/theorem-definition-lemma-problem-numbering
