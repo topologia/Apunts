@@ -5,6 +5,7 @@
 \usepackage{amsthm, amssymb, amsmath}
 
 \newtheorem{theorem}{Teorema}[section]%chapter
+\newtheorem{proposition}[theorem]{Proposició}
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definició}
@@ -91,8 +92,55 @@ $(X, d)$ Conjunt $X$ amb l'aplicació distància $d$. On la distància respecta 
 \end{itemize}
 \end{example}
 
+\begin{definition}[boles]
+Donat $(X, d)$ espai mètric, $p \in X, r > 0$
+\begin{itemize}
+\item[oberta] $B_r(p) = \{y \in X | d(p, y) < r\}$
+\item[tancada] $\bar{B_r}(p) = \{y \in X | d(p, y) \leq r\}$
+\item[esfera] $S_r(p) = \{y \in X | d(p, y) = r\}$
+\end{itemize}
+\end{definition}
+
+\begin{definition}[obert]
+\begin{itemize}
+\item $(X, d)$ espai mètric
+\item $\U \subset X$ és obert
+	\begin{itemize}
+	\item[si] $\forall p \in \U, \exists r > 0$ tal que
+		\begin{itemize}
+		\item $B_r (p) \subset \U$
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{definition}
+
+\begin{proposition}
+Les boles obertes són obertes.
+\end{proposition}
 \begin{proof}
-muhaha ex xD
+Donat
+\begin{itemize}
+\item $B_s (x)$
+\item $x \in X$
+\item $s > 0$
+	\begin{itemize}
+	\item Escollim
+	\item $p \in B_s (x)$
+	\item $\delta = d(p, x)$
+	\item $r = s - \delta$
+		\subitem $r \neq 0$ ja que si $d(p, x) = s$, és una contradicció perquè $p \in B_s(x)$
+	\end{itemize}
+\end{itemize}
+Comprovem
+$$B_r (p) \overset{?}{\subset} B_s(x)$$
+Per a comprovar-ho
+\begin{itemize}
+\item $q \in B_r (p)$
+\item $q \overset{?}{\in} B_s (x)$
+	\begin{itemize}
+	\item $d(q, x) \leq d(q, p) + d(p, x) < r + \delta = s \Rightarrow q \in B_s(x)$
+	\end{itemize}
+\end{itemize}
 \end{proof}
 
 \end{document}
